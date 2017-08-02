@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+<body ng-app="">
+<p>Try leaving the first input field blank:</p>
+<form name="myForm" novalidate>
+<p>First Name:
+<input name="myName" ng-model="myName" required>
+<span ng-show="myForm.$submitted || myForm.myName.$touched">
+<span style="color:red" ng-show="myForm.myName.$error.required">The first name is required.</span>
+</span>
+</p>
+
+<p>Last Name:
+<input name="lastname" ng-model="lastname" required>
+<span ng-show="myForm.$submitted || myForm.lastname.$touched">
+<span style="color:red" ng-show="myForm.lastname.$error.required">The last name is required.</span>
+</span>
+</p>
+
+<p>Email:<input type="email" name="email" ng-model="email" required>
+  <span style="color:red" ng-show="myForm.$submitted || myForm.lastname.$touched">
+  <span ng-show="myForm.email.$error.required">Email is required.</span>
+  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+  </span>
+</p>
+<input type="checkbox" name="chk" id="chk" ng-model="chk" value="Y" required>
+<span ng-show="myForm.$submitted || myForm.chk.$touched">
+<span style="color:red" ng-show="myForm.chk.$error.required">Please check box is required.</span>
+</span>
+<p>Address:
+<input name="myAddress" ng-model="myAddress" required>
+</p>
+<input type="submit" name="submit" id="submit" value="submit">
+</form>
+</body>
+</html>
+
